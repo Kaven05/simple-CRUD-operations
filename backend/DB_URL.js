@@ -1,3 +1,3 @@
-const dblink = "mongodb://localhost:27017/User";
+// const dblink =;
 
-module.exports = dblink
+module.exports =  "mongodb://localhost:27017/User"
