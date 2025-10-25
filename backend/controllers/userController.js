@@ -8,6 +8,15 @@ exports.getAll = async (req, res) => {
   }
 };
 
+exports.getUser = async (req, res) => {
+  try {
+    const details = await user.findOne({id:req.params.id});
+    res.status(200).json(details);
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
+};
+
 exports.createUser = async (req, res) => {
   try {
     const { id } = req.body;

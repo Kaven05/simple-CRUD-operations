@@ -1,16 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const dburl = require("./DB_URL");
-const connectDB = require("./db")
-const userRoutes = require('./routes/userRoute')
+const cors = require("cors");
+const connectDB = require("./db");
+const userRoutes = require("./routes/userRoute");
 
 const app = express();
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get("/", (req, res) => {
   res.status(200).json({ message: "hello" });
 });
-app.use('/user',userRoutes)
+app.use("/user", userRoutes);
 
 connectDB();
 
