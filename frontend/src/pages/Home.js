@@ -8,7 +8,8 @@ const Home = () => {
     <Link to='/all'>All Student Details</Link>
     <br />
     <Link to='/create'>Create Students</Link>
-    
+    <br />
+    {/* <Link to='/update/:id'>Students</Link> */}
     </>
   )
 }
