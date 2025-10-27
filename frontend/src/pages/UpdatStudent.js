@@ -24,8 +24,7 @@ const UpdatStudent = () => {
 
   useEffect(() => {
     fetchData();
-  }, [
-  ]);
+  }, []);
 
   return (
     <div>

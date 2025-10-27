@@ -7,9 +7,14 @@ const StudentDetails = () => {
     fetchStudent();
   }, []);
   const fetchStudent = async () => {
+    try{
     const res = await axios.get("http://localhost:5000/user");
     console.log(res.data);
     setStudent(res.data);
+    }catch(err){
+      console.log(err);
+      
+    }
   };
   return (
     <div>

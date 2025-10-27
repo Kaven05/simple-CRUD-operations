@@ -5,8 +5,13 @@ const IndividualStudent = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const fetchData = async () => {
+    try{
     const res = await axios.get(`http://localhost:5000/user/${id}`);
-    setData(res.data);
+    setData(res.data);}
+    catch(err){
+      console.log(err);
+      
+    }
   };
   useEffect(() => {
     fetchData()
