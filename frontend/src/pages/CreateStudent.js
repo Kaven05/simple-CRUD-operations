@@ -23,12 +23,12 @@ const CreateStudent = () => {
         <input
           type="string"
           placeholder="name"
-          {...register("name", { required: "id req" })}
+          {...register("name", { required: "name req" })}
         /><br />
         <input
           type="password"
-          placeholder="ID"
-          {...register("password", { required: "id req" })}
+          placeholder="password"
+          {...register("password", { required: "pass req" })}
         /><br />
         <button type="submit">Submit</button>
       </form>

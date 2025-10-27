@@ -4,6 +4,7 @@ import CreateStudent from "./pages/CreateStudent";
 import Home from "./pages/Home";
 import StudentDetails from "./pages/StudentDetails";
 import UpdatStudent from "./pages/UpdatStudent";
+import IndividualStudent from "./pages/IndividualStudent";
 function App() {
   return (
     <>
@@ -12,7 +13,7 @@ function App() {
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/all" element={<StudentDetails />} />
         <Route path="/create" element={<CreateStudent />} />
-        {/* <Route path="/:id" element={<IndividualStudent />} /> */}
+        <Route path="/view/:id" element={<IndividualStudent />} />
         <Route path="/:id" element={<UpdatStudent />} />
       </Routes>
     </>

@@ -5,24 +5,26 @@ const IndividualStudent = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const fetchData = async () => {
-    try{
-    const res = await axios.get(`http://localhost:5000/user/${id}`);
-    setData(res.data);}
-    catch(err){
+    try {
+      const res = await axios.get(`http://localhost:5000/user/${id}`);
+      setData(res.data);
+    } catch (err) {
       console.log(err);
-      
     }
   };
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   return (
     <div>
+      <p>jhgfd</p>
       {data ? (
         <p>
-          name : {data.name}<br />
-          password : {data.password}<br />
+          name : {data.name}
+          <br />
+          password : {data.password}
+          <br />
           Dept : {data.dept}
         </p>
       ) : (

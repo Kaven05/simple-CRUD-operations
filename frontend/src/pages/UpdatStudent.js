@@ -32,14 +32,14 @@ const UpdatStudent = () => {
         <input
           type="number"
           placeholder="id"
-          value={data.id || ""}
+          value={data.id}
           onChange={(e) => setData({ ...data, id: e.target.value })}
         />
 
         <input
           type="text"
           placeholder="name"
-          value={data.name || ""}
+          value={data.name}
           onChange={(e) => {
             setData({ ...data, name: e.target.value });
           }}
@@ -47,7 +47,7 @@ const UpdatStudent = () => {
         <input
           type="text"
           placeholder="password"
-          value={data.password || ""}
+          value={data.password }
           onChange={(e) => {
             setData({ ...data, password: e.target.value });
           }}

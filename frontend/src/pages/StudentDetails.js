@@ -7,28 +7,29 @@ const StudentDetails = () => {
     fetchStudent();
   }, []);
   const fetchStudent = async () => {
-    try{
-    const res = await axios.get("http://localhost:5000/user");
-    console.log(res.data);
-    setStudent(res.data);
-    }catch(err){
+    try {
+      const res = await axios.get("http://localhost:5000/user");
+      console.log(res.data);
+      setStudent(res.data);
+    } catch (err) {
       console.log(err);
-      
     }
   };
   return (
     <div>
-      <ul>
+      <ol>
         {students.map((item) => (
           <>
-            <li key={item._id}>
+            <li>
               <Link to={`/${item.id}`}>{item.id}</Link>
+              <br />
+              To view:<Link to={`/view/${item.id}`}>{item.id}</Link>
               <br />
               Name : {item.name} Dept:{item.dept}
             </li>
           </>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 };
