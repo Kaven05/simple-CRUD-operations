@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const IndividualStudent = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const navi = useNavigate();
   const fetchData = async () => {
     try {
       const res = await axios.get(`http://localhost:5000/user/${id}`);
@@ -15,7 +16,10 @@ const IndividualStudent = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
+  const handleDelete = async () => {
+    await axios.delete(`http://localhost:5000/user/${id}`);
+    navi(-1);
+  };
   return (
     <div>
       <p>jhgfd</p>
@@ -26,6 +30,7 @@ const IndividualStudent = () => {
           password : {data.password}
           <br />
           Dept : {data.dept}
+          <button onClick={handleDelete}>Delete</button>
         </p>
       ) : (
         <h2>Not Found</h2>

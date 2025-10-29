@@ -5,7 +5,7 @@ const StudentDetails = () => {
   const [students, setStudent] = useState([{}]);
   useEffect(() => {
     fetchStudent();
-  }, []);
+  }, [students]);
   const fetchStudent = async () => {
     try {
       const res = await axios.get("http://localhost:5000/user");
@@ -15,6 +15,15 @@ const StudentDetails = () => {
       console.log(err);
     }
   };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/user/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <ol>
@@ -26,6 +35,8 @@ const StudentDetails = () => {
               To view:<Link to={`/view/${item.id}`}>{item.id}</Link>
               <br />
               Name : {item.name} Dept:{item.dept}
+              <br />
+              <button onClick={() => handleDelete(item.id)}>Delete</button>
             </li>
           </>
         ))}
