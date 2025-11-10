@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const StudentDetails = () => {
   const [students, setStudent] = useState([{}]);
+
   useEffect(() => {
     fetchStudent();
   }, [students]);
+  
   const fetchStudent = async () => {
     try {
       const res = await axios.get("http://localhost:5000/user");

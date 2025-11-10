@@ -10,7 +10,6 @@ function App() {
     <>
       <Home />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/all" element={<StudentDetails />} />
         <Route path="/create" element={<CreateStudent />} />
         <Route path="/view/:id" element={<IndividualStudent />} />
